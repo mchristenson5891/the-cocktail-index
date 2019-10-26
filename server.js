@@ -17,6 +17,7 @@ require('./db/db');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
+
 app.listen(3000, ()=>{
     console.log(3000, 'listening')
 });
