@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
-    photo: Sting,
+    photoURL: String,
     description: String,
     recipes: [{
         type: mongoose.Schema.Types.ObjectId,
