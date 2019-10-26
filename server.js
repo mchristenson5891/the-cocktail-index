@@ -13,6 +13,10 @@ require('./db/db');
 //     saveUnintialized: false
 // }));
 
+
+//styles
+app.use(express.static('public'));
+
 //middelware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
@@ -21,7 +25,7 @@ app.use(methodOverride('_method'));
 app.use('/', (req, res)=>{
     res.render('index.ejs')
 
-})
+});
 
 app.listen(3000, ()=>{
     console.log(3000, 'listening')
