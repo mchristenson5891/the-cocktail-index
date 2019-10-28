@@ -46,7 +46,7 @@ app.get('/register', (req, res)=>{
 });
 
 app.get('/login', (req, res)=>{
-    res.render('login.ejs')
+    res.render('login/login.ejs')
 });
 
 app.listen(3000, ()=>{

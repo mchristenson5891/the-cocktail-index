@@ -1,51 +1,60 @@
 body{
-    /* background-color: lightgrey; */
+    background-color: white;
     margin: 6rem 0 0 0;
     font-family: 'Special Elite', cursive;
 }
+
 .nav{
     position:fixed;
     width: 100%;
     top: 0;
-    background-color: lightgrey;
+    background-color: black;
     
 }
+
 .nav-header{
-    max-width: 75%;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: 0 auto;                         
     display: flex;
-    padding: 15px;
+    padding: 20px;
 }
+
 .nav-left{
     width: 33.333%;
     text-align: left;
 }
+
 .nav-center{
     width: 33.333%;
     text-align: center;
+    padding-left: 10%;
 }
+
 .nav-right{
     width: 60%;
     text-align: right;
 }
+
 .nav-link{
     text-decoration: none;
     margin-left: 3%;
     text-transform: uppercase;
-    color: black;
+    color: white;
 }
+
 .nav-link:hover{
     color:dodgerblue;
     cursor: pointer;
 }
+
 .hamburger-menu{
-    width: 40px;
+    /* width: 40px; */
     height: 25px;
     position: relative;
-    margin: 14px 15% 0 auto;
+    /* margin: 14px 15% 0 auto; */
     z-index: 2;
-    display: none;
 }
+
 .bar{
     display: block;
     position: absolute;
@@ -53,15 +62,18 @@ body{
     height: 3px;
     left: 0px;
     border-radius: 6px;
-    background-color: black;
+    background-color: white;
     transition: all .50s ease-in-out;
 }
+
 .bar:nth-child(1){
     top: 0px;
 }
+
 .bar:nth-child(2){
     top: 22.5%;
 }
+
 .bar:nth-child(3){
     top: 48%;    
 }
@@ -91,7 +103,7 @@ body{
 
 .overlay {
     height:100%;
-    width: 100%;
+    width: 34%;
     display: flex;
     position: fixed;
     background-color: #000000e5;
@@ -119,14 +131,14 @@ body{
     color: white;
     text-decoration: none;
     font-size: 36px;
-    /* display: block; */
+    padding-bottom: 10%;
 }
 
 @media (max-width: 822px) {
     .hamburger-menu {
         display: block;
     }
-    .nav-right > a {
+    .nav-left > a {
         display: none;
     }
 }
@@ -134,6 +146,7 @@ body{
     display: flex;
     max-width: 85%;
     margin: 0 auto;
+    background-color: bisque;
 }
 h1{
     text-align: center;
