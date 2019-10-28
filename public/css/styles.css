@@ -43,15 +43,13 @@ body{
 }
 
 .nav-link:hover{
-    color:dodgerblue;
+    color: rgb(255, 196, 0);
     cursor: pointer;
 }
 
 .hamburger-menu{
-    /* width: 40px; */
     height: 25px;
     position: relative;
-    /* margin: 14px 15% 0 auto; */
     z-index: 2;
 }
 
@@ -171,3 +169,8 @@ main li{
 main div{
     display: block;
 }
+.login-form{
+    text-align: center;
+
+}
+

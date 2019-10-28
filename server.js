@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session')
+const bartendersController = require('./controllers/bartenders.js');
+const recipesController = require('./controllers/recipes.js');
 
 require('./db/db');
 
@@ -22,14 +24,13 @@ app.use(methodOverride('_method'));
 
 //controllers
 
-const bartendersController = require('./controllers/bartenders.js');
 app.use('/bartenders', bartendersController)
 
-const recipesController = require('./controllers/recipes.js');
+
 app.use('/recipes', recipesController)
 
-const usersController = require('./controllers/users.js');
-app.use('/auth', usersController)
+// const usersController = require('./controllers/users.js');
+// app.use('/auth', usersController)
 
 
 //homepage
@@ -37,6 +38,7 @@ app.get('/', (req, res)=>{
     console.log(req.session, 'home route')
     res.render('index.ejs',{
         message: req.session.message,
+        logOut : req.session.logOutMsg
     })
 
 });
