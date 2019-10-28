@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/users');
+const Bartender = require('../models/bartenders');
 const Recipes = require('../models/recipes');
 
 module.exports = router;

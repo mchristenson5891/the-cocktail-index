@@ -10,9 +10,9 @@
     <main>
         <h1> Meet our Bartenders</h1>
         <ul>
-            <%= for(let i = 0; users.length; i++) { %>
+            <%= for(let i = 0; bartenders.length; i++) { %>
                 <li>
-                    <a href="/users/<%=users[i]._id%>"><%=users[i].username%></a>
+                    <a href="/bartenders/<%=bartenders[i]._id%>"><%=bartenders[i].username%></a>
                 </li>
 
             }

@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
-<%-include('./partials/navbar.ejs')%>
 <body>
 
     <main>
-        <form action="/users" method="POST">
-            <input type="text" name="username" />
-            <input type="text" name="photoURL"/>
+        <form action="/bartenders" method="POST">
+            Username: <input type="text" name="username" />
+            Photo: <input type="text" name="photoURL"/>
             <button type='Submit'>Create Your User Profile</button>
         </form>
     </main>
