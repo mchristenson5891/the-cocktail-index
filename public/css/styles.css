@@ -1,6 +1,7 @@
 body{
     background-color: lightgrey;
     margin: 6rem 0 0 0;
+    font-family: 'Special Elite', cursive;
 }
 .nav{
     position:fixed;
@@ -40,7 +41,6 @@ body{
 .hamburger-menu{
     width: 40px;
     height: 25px;
-    /* border: 1px solid black; */
     position: relative;
     margin: 14px 15% 0 auto;
     z-index: 2;
@@ -130,9 +130,19 @@ body{
         display: none;
     }
 }
-.container{
-    background-color: salmon;
-    height: 50%;
+.photo{
+    /* border: 2px solid black; */
+    width: 52%;
+}
+.description{
+    float: right;
+    /* border: 2px solid black; */
+    width: 50%;
+    position: relative;
+    top: -465px;
+    height: 461px; 
+}
+p{
+    text-align: center;
     
-
 }
