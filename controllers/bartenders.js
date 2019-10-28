@@ -6,16 +6,27 @@ const bcrypt = require('bcryptjs')
 
 router.post('/register', async (req, res) => {
 
-  const password = req.body.password; // the password from the form
-  const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
-  req.body.password = passwordHash
-  
-  const createdBartender = await Bartender.create(req.body);
-  console.log(createdBartender)
-  req.session.username = createdBartender.username;
-  req.session.logged = true;
+  try{
+    const foundBartender = await Bartender.find({username: req.body.username})
+    if(foundBartender){
+      res.send('Username already exists')
 
-  res.redirect('/bartenders')
+    }else{
+      const password = req.body.password; // the password from the form
+      const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+      req.body.password = passwordHash
+      
+      const createdBartender = await Bartender.create(req.body);
+      console.log(createdBartender)
+      req.session.username = createdBartender.username;
+      req.session.logged = true;
+    
+      res.redirect('/bartenders')
+    }
+
+  }catch(err){
+    res.send(err)
+  }
 
 });
 
@@ -25,7 +36,7 @@ router.post('/login', async(req, res)=>{
       const foundBartender = await Bartender.findOne({username: req.body.username})
       if(foundBartender ){
         if(bcrypt.compareSync(req.body.password, foundBartender .password)){
-          req.session.message ='';
+          req.session.message ='Logged out.';
           req.setEncoding.username = foundBartender.username;
           req.session.logged = true;
           res.redirect('/bartenders')
