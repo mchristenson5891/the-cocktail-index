@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
 
     try{
         const allBartenders = await Bartender.find({})
+        console.log(allBartenders)
         res.render('bartenders/index.ejs',{
             bartenders: allBartenders
         })
@@ -30,7 +31,7 @@ router.post('/', async (req, res)=>{
     try{
         const createdBartender = await Bartender.create(req.body);
         console.log(createdBartender)
-        res.redirect('/bartnders/index.ejs')
+        res.redirect('/bartenders')
     }catch(err){
         res.send(err)
     }

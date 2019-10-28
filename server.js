@@ -33,9 +33,20 @@ app.use('/auth', usersController)
 
 
 //homepage
-app.use('/', (req, res)=>{
-    res.render('index.ejs')
+app.get('/', (req, res)=>{
+    console.log(req.session, 'home route')
+    res.render('index.ejs',{
+        message: req.session.message,
+    })
 
+});
+
+app.get('/register', (req, res)=>{
+    res.render('register/register.ejs')
+});
+
+app.get('/login', (req, res)=>{
+    res.render('login.ejs')
 });
 
 app.listen(3000, ()=>{

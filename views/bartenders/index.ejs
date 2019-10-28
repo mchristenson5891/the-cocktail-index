@@ -10,12 +10,12 @@
     <main>
         <h1> Meet our Bartenders</h1>
         <ul>
-            <%= for(let i = 0; bartenders.length; i++) { %>
+            <% for(let i = 0; i < bartenders.length; i++) { %>
                 <li>
-                    <a href="/bartenders/<%=bartenders[i]._id%>"><%=bartenders[i].username%></a>
+                    <a href="/bartenders/<%=bartenders[i]._id %>"><%=bartenders[i].username%></a>
                 </li>
 
-            }
+           <% } %>
         </ul>
     </main>
 

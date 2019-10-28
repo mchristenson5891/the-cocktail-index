@@ -130,19 +130,13 @@ body{
         display: none;
     }
 }
-.photo{
-    /* border: 2px solid black; */
-    width: 52%;
-}
-.description{
-    float: right;
-    /* border: 2px solid black; */
-    width: 50%;
-    position: relative;
-    top: -465px;
-    height: 461px; 
+.content{
+    display: flex;
+    max-width: 85%;
+    margin: 0 auto;
 }
 h1{
     text-align: center;
+    padding-left: 10px;
     
 }
