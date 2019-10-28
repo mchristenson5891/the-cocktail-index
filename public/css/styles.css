@@ -27,7 +27,7 @@ body{
 .nav-center{
     width: 33.333%;
     text-align: center;
-    padding-left: 10%;
+    padding-left: 16%;
 }
 
 .nav-right{
@@ -151,7 +151,13 @@ body{
 h1{
     text-align: center;
     padding-left: 10px;
+    padding-top: 5%;
     
+}
+.bartender-content{
+    background-color: bisque;
+    max-width: 85%;
+    margin: 0 auto;
 }
 main ul{
     text-align: center;
