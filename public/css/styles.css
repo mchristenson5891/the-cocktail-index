@@ -153,3 +153,15 @@ h1{
     padding-left: 10px;
     
 }
+main ul{
+    text-align: center;
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 10px 0;
+}
+main li{
+    padding-bottom: 15px;
+}
+main div{
+    display: block;
+}
