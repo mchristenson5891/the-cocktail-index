@@ -140,37 +140,60 @@ body{
         display: none;
     }
 }
+
 .content{
     display: flex;
     max-width: 85%;
     margin: 0 auto;
     background-color: bisque;
 }
+
 h1{
     text-align: center;
     padding-left: 10px;
     padding-top: 5%;
     
 }
+
 .bartender-content{
     background-color: bisque;
     max-width: 85%;
     margin: 0 auto;
 }
+
 main ul{
     text-align: center;
     list-style: none;
     margin: 20px 0 0;
     padding: 10px 0;
 }
+
 main li{
     padding-bottom: 15px;
 }
+
 main div{
     display: block;
 }
+
 .login-form{
     text-align: center;
 
 }
 
+h2{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 5%;
+}
+
+img{
+    text-align: left;
+
+}
+.showpage{
+    display: flex;
+    max-width: 85%;
+    margin: 0 auto;
+    background-color: bisque;
+}
