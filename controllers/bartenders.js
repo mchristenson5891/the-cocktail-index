@@ -105,6 +105,35 @@ router.get('/:id/edit', async(req, res)=>{
   }
 });
 
+router.put('/:id', async (req, res)=>{
+
+  try{
+
+    const updatedBartender = await Bartender.findByIdAndUpdate(req.params.id, req.body)
+    // .populate({path:'recipes'})
+    console.log(updatedBartender)
+    res.redirect('/bartenders')
+
+  }catch(err){
+    res.send(err)
+  }
+})
+
+//delete
+
+router.delete('/:id', async (req, res)=>{
+
+  try{
+    const deletedBartender = await Bartender.findByIdAndDelete(req.params)
+    // await Recipes.remove({_id: {$in: deletedBartender.recipes}})
+    console.log(deletedBartender, 'deleting the bartender')
+    res.redirect('/bartenders')
+
+  }catch(err){
+    res.send(err)
+  }
+})
+
 
 //register
 router.post('/register', async (req, res) => {
