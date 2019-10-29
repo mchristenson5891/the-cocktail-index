@@ -52,6 +52,24 @@ router.post('/', async (req, res)=>{
     }catch(err){
         console.log(err)
     }
+});
+
+//show route
+router.get('/:id', async(req, res)=>{
+
+    try{
+        const foundBartender = await Bartender.findOne({'recipes': req.params.id})
+        .populate({path: 'recipes', match: {_id: req.params.id}})
+        console.log(foundBartender)
+        res.render('recipes/show.ejs', {
+            bartender: foundBartender,
+            recipe: foundBartender.recipes[0]
+        })
+
+    }catch(err){
+        console.log(err)
+
+    }
 })
 
 
