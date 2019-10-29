@@ -166,10 +166,12 @@ main ul{
     list-style: none;
     margin: 20px 0 0;
     padding: 10px 0;
+    
 }
 
 main li{
     padding-bottom: 15px;
+    
 }
 
 main div{
@@ -187,13 +189,16 @@ h2{
     padding-top: 5%;
 }
 
-img{
-    text-align: left;
-
-}
 .showpage{
-    display: flex;
     max-width: 85%;
     margin: 0 auto;
     background-color: bisque;
+}
+.description ul{
+    list-style: none;
+    text-align: left;
+    padding: 15px;
+}
+.description li{
+    padding-bottom: 15px;
 }
