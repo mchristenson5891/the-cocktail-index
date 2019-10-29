@@ -152,7 +152,6 @@ h1{
     text-align: center;
     padding-left: 10px;
     padding-top: 5%;
-    
 }
 
 .bartender-content{
@@ -189,16 +188,29 @@ h2{
     padding-top: 5%;
 }
 
-.showpage{
-    max-width: 85%;
-    margin: 0 auto;
-    background-color: bisque;
+.photo{
+    border: 2px solid black;
 }
+
 .description ul{
     list-style: none;
     text-align: left;
     padding: 15px;
 }
+
 .description li{
     padding-bottom: 15px;
 }
+
+/* .edit-link{
+    position: relative;
+    height: 25px;
+    top: 470px;
+    left: 65px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+} */

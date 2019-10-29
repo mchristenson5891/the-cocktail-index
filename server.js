@@ -18,20 +18,14 @@ app.use(session({
 //styles
 app.use(express.static('public'));
 
+
 //middelware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-//controllers
-
+//use
 app.use('/bartenders', bartendersController)
-
-
 app.use('/recipes', recipesController)
-
-// const usersController = require('./controllers/users.js');
-// app.use('/auth', usersController)
-
 
 //homepage
 app.get('/', (req, res)=>{
