@@ -12,7 +12,8 @@ router.post('/login', async(req, res)=>{
       if(foundBartender ){
         if(bcrypt.compareSync(req.body.password, foundBartender .password)){
           req.session.message ='Logged out.';
-          req.setEncoding.username = foundBartender.username;
+          req.session.username = foundBartender.username;
+          req.session.userId = foundBartender._id
           req.session.logged = true;
           res.redirect('/bartenders')
         }else{
@@ -109,8 +110,7 @@ router.put('/:id', async (req, res)=>{
 
   try{
 
-    const updatedBartender = await Bartender.findByIdAndUpdate(req.params.id, req.body)
-    // .populate({path:'recipes'})
+    const updatedBartender = await Bartender.findByIdAndUpdate(req.params.id, req.body).populate({path:'recipes'})
     console.log(updatedBartender)
     res.redirect('/bartenders')
 
@@ -124,8 +124,8 @@ router.put('/:id', async (req, res)=>{
 router.delete('/:id', async (req, res)=>{
 
   try{
-    const deletedBartender = await Bartender.findByIdAndDelete(req.params)
-    // await Recipes.remove({_id: {$in: deletedBartender.recipes}})
+    const deletedBartender = await Bartender.findByIdAndRemove(req.params.id)
+    await Recipes.remove({_id: {$in: deletedBartender.recipes}})
     console.log(deletedBartender, 'deleting the bartender')
     res.redirect('/bartenders')
 
@@ -152,6 +152,7 @@ router.post('/register', async (req, res) => {
       const createdBartender = await Bartender.create(req.body);
       console.log(createdBartender)
       req.session.username = createdBartender.username;
+      req.session.userId = createdBartender._id
       req.session.logged = true;
     
       res.redirect('/bartenders')

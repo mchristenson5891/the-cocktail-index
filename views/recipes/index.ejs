@@ -1,0 +1,18 @@
+<%- include('partials/header',{
+    title: 'index page'
+    }) %>
+<%-include('./partials/navbar.ejs')%>
+
+<div class="recipe-feed">
+    <h1>Cocktail Feed</h1>
+        <ul>
+            <% for(let i = 0; i < recipes.length; i++) { %>
+                <li> <a href="/recipes/<%= recipes[i]._id%>"><img src="<%= recipes[i].photo %>"></a>
+                </li> 
+            <% } %>
+        </ul>
+
+</div>
+    
+</body>
+</html>

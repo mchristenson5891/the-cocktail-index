@@ -1,0 +1,17 @@
+<%- include('partials/header',{
+    title: 'index page'
+    }) %>
+<%-include('./partials/navbar.ejs')%>
+
+<div class="content">
+    <div class="photo">
+        <img src="<%=recipe.photo %>">
+    </div>
+    <div class="description">
+        <li> Drink Name: <%= recipe.drinkName %></li>
+        <li>Ingredients: <%= recipe.ingredients %></li>
+    </div>
+</div>
+    
+</body>
+</html>

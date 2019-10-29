@@ -1,0 +1,29 @@
+<%- include('partials/header',{
+    title: 'index page'
+    }) %>
+<%-include('./partials/navbar.ejs')%>
+
+<div class="recipe-new">
+    <h1>Add a Cocktail Recipe</h1>
+        <main class="recipes">
+            <form action="/recipes" method="POST">
+                <div class="drink-name">
+                    Drink Name: <input type="text" placeholder="drink name" name ="drinkName">
+                </div>
+                <div class="photos">
+                    Photo:<input type="text" placeholder ='photo' name= 'photo'>
+                </div>
+                <div class="ingredients">
+                    Ingredients: 
+                <textarea name="ingredients" placeholder="indredients" cols="30" rows="10"></textarea>
+                </div>
+                <button type='submit'>Create Recipe</button>
+            </form>
+        </main>     
+    
+
+</div>
+
+    
+</body>
+</html>

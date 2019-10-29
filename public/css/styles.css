@@ -202,7 +202,7 @@ h2{
     padding-bottom: 15px;
 }
 
-/* .edit-link{
+.edit-link{
     position: relative;
     height: 25px;
     top: 470px;
@@ -213,4 +213,18 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     color: black;
-} */
+}
+.delete-button{
+    position: relative;
+    height: 25px;
+    top: 470px;
+    left: 65px;
+    display: block;
+}
+.recipe-new{
+    background-color: bisque;
+    max-width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10%;
+}

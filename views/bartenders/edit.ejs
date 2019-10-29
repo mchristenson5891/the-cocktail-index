@@ -12,16 +12,22 @@
                 <div class= 'description'>
                     <div>
                         <ul>
-                            <li>username: <%= bartender.username %></li>
+                            <form action="/bartenders/<%= bartender._id %>?_method=PUT" method="POST">
+                            <li>Username: <input type="text" name= 'username' value='<%= bartender.username %>'></li>
                             <li>cocktail index:</li>
+                            <input type="Submit" value='Update Profile'/>
+                        </form>
                         </ul>
                     </div>
                 </div>
-                    <div class='edit-link'>
-                        <a href="/bartenders/<%= bartender._id %>/edit">Edit Profile</a>
-                    </div>
-               
-            </div>
+                    
+                <div class="delete-button">
+                    <form action="/bartenders/<%= bartender._id%>?_method=DELETE" method= "POST">
+                    <button type= 'Submit'>DELETE</button>
+                </form>
+                    
+                </div> 
+        </div>
                     
 </body>
 </html>

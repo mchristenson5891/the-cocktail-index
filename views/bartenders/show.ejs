@@ -10,20 +10,24 @@
                     
                 </div>
                 <div class= 'description'>
-                    <div>
-                        <ul>
-                            <li>username: <%= bartender.username %></li>
-                            <li>cocktail index:</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="delete-button">
-                     <form action="/bartenders/<%=bartender._id%>?_method=DELETE" method= "POST"></form>
-                     <button type= 'Submit'>DELETE</button>
+                    <ul>
+                        <li>username: <%= bartender.username %></li>
+                        <li>cocktail index:
+                                <% for(let i=0; i < bartender.recipes.length; i++){ %>
+                                    <ul>
+                                        <li>
+                                            <a href="/recipes/<%= bartender.recipes[i].drinkName %>"></a>
+                                        </li>
+                                    </ul>
+                            <% } %>
+                        </li> 
+                        
+                    </ul>
                 </div>
                     <div class='edit-link'>
                         <a href="/bartenders/<%= bartender._id %>/edit">Edit Profile</a>
                     </div>
+                    <a href="/recipes/new">Create Recipe</a>
                
             </div>
                     
