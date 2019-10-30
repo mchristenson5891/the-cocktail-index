@@ -12,15 +12,16 @@
         <li> Drink Name: <%= recipe.drinkName %></li>
         <li>Ingredients: <%= recipe.ingredients %></li>
     </div>
-    <%if(isLogged === bartenderId) {%>
-    <div class='edit-link'>
-            <a href="/recipes/<%=bartender.recipes[0]._id%>/edit">Edit Recipe</a>
-    </div>
-    <div>
-        <form action="/recipes/<%=bartender.recipes[0]._id%>?_method=DELETE" method='POST'>
-            <button type='submit'>Delete</button>
-        </form>
-    </div>
+   
+    <% if(isLogged) { %>
+        <div class='edit-link'>
+                <a href="/recipes/<%=bartender.recipes[0]._id%>/edit">Edit Recipe</a>
+        </div>
+        <div>
+            <form action="/recipes/<%=bartender.recipes[0]._id%>?_method=DELETE" method='POST'>
+                <button type='submit'>Delete</button>
+            </form>
+        </div>
     <% } %>
 </div>
 
