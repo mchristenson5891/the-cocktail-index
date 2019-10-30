@@ -57,14 +57,12 @@ router.post('/', async (req, res)=>{
 
 //show route
 router.get('/:id', async(req, res)=>{
-
     try{
-        const foundBartender = await Bartender.findOne({'recipes': req.params.id})
-        
-        .populate({path: 'recipes', match: {_id: req.params.id}})
+        const foundBartender = await Bartender.findOne({'recipes': req.params.id}).populate('recipes')
+        const foundRecipe = await Recipe.findById(req.params.id)
         res.render('recipes/show.ejs', {
             bartender: foundBartender,
-            recipe: foundBartender.recipes[0]
+            recipe: foundRecipe
         })
         console.log(foundBartender,'<===++++++++++=======found bt');
 
@@ -102,22 +100,19 @@ router.put('/:id', async(req, res)=>{
 
 delete
 router.delete('/:id', async (req, res)=>{
-
     try{
         const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
-        const foundBartender = await Bartender.findOne({'photos': req.params.id})
-        foundBartender.recipe.remove(req.params.id)
+        const foundBartender = await Bartender.findOne({'recipes': req.params.id})
+        foundBartender.recipes.remove(req.params.id)
         foundBartender.save((err, updatedUser)=>{
             console.log(updatedUser, '=========this updated user')
-            res.recipe('/recipes')
+            res.redirect('/recipes')
         })
 
     }catch(err){
         console.log(err)
     }
 })
-
-
 
 
 module.exports = router;

@@ -11,7 +11,7 @@ router.post('/login', async(req, res)=>{
       const foundBartender = await Bartender.findOne({username: req.body.username})
       if(foundBartender ){
         if(bcrypt.compareSync(req.body.password, foundBartender .password)){
-          req.session.message ='Logged out.';
+          req.session.message ='Logged out.'; ///maybe take out
           req.session.username = foundBartender.username;
           req.session.userId = foundBartender._id
           req.session.logged = true;
@@ -130,12 +130,12 @@ router.delete('/:id', async (req, res)=>{
 
   try{
     const deletedBartender = await Bartender.findByIdAndRemove(req.params.id)
-    await Recipes.remove({_id: {$in: deletedBartender.recipes}})
+    await Recipe.remove({_id: {$in: deletedBartender.recipes}})
     console.log(deletedBartender, 'deleting the bartender')
     res.redirect('/bartenders')
 
   }catch(err){
-    res.send(err)
+    console.log(err)
   }
 })
 
