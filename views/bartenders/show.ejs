@@ -25,12 +25,14 @@
                         
                     </ul>
                 </div>
+                <%if(isLogged === bartenderId) {%>
                     <div class='edit-link'>
                         <a href="/bartenders/<%= bartender._id %>/edit">Edit Profile</a>
                     </div>
                     <div class="create">
                         <a href="/recipes/new">Create Recipe</a>
                     </div>
+                    <% } %>
                
             </div>
                     

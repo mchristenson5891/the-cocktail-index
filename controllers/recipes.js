@@ -56,13 +56,17 @@ router.post('/', async (req, res)=>{
 });
 
 //show route
-router.get('/:id', async(req, res)=>{
+router.get('/:id', async (req, res)=>{
     try{
         const foundBartender = await Bartender.findOne({'recipes': req.params.id}).populate('recipes')
         const foundRecipe = await Recipe.findById(req.params.id)
+        const isLogged = req.session.userId
+        const bartenderId = req.params.id
         res.render('recipes/show.ejs', {
             bartender: foundBartender,
-            recipe: foundRecipe
+            recipe: foundRecipe,
+            isLogged: isLogged,
+            bartenderId: bartenderId
         })
         console.log(foundBartender,'<===++++++++++=======found bt');
 
