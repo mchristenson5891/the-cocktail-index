@@ -91,28 +91,29 @@ router.put('/:id', async(req, res)=>{
 
     try{
         const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body)
-        res.redirect('recipes/show.ejs')
+        console.log(updatedRecipe)
+        res.redirect('/recipes')
     }catch(err){
         console.log(err)
     }
 });
 
 //delete
-router.delete('/:id', async (req, res)=>{
+// router.delete('/:id', async (req, res)=>{
 
-    try{
-        const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
-        const foundBartender = await Bartender.findOne({'photos': req.params.id})
-        foundBartender.recipes.remove(rq.params.id)
-        foundBartender.save((err, updatedUser)=>{
-            console.log(updatedUser, '=========this updated user')
-            res.recipe('/recipes')
-        })
+//     try{
+//         const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
+//         const foundBartender = await Bartender.findOne({'photos': req.params.id})
+//         foundBartender.recipes.remove(rq.params.id)
+//         foundBartender.save((err, updatedUser)=>{
+//             console.log(updatedUser, '=========this updated user')
+//             res.recipe('/recipes')
+//         })
 
-    }catch(err){
-        res.send(err)
-    }
-})
+//     }catch(err){
+//         res.send(err)
+//     }
+// })
 
 
 
