@@ -70,7 +70,51 @@ router.get('/:id', async(req, res)=>{
         console.log(err)
 
     }
+});
+
+//edit route
+router.get('/:id/edit', async(req, res)=>{
+
+    try{
+        const foundRecipe = await Recipe.findById(req.params.id)
+        res.render('recipes/edit.ejs', {
+            recipe: foundRecipe
+        })
+
+    }catch(err){
+        console.log(err)
+
+    }
+});
+
+router.put('/:id', async(req, res)=>{
+
+    try{
+        const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect('recipes/show.ejs')
+    }catch(err){
+        console.log(err)
+    }
+});
+
+//delete
+router.delete('/:id', async (req, res)=>{
+
+    try{
+        const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
+        const foundBartender = await Bartender.findOne({'photos': req.params.id})
+        foundBartender.recipes.remove(rq.params.id)
+        foundBartender.save((err, updatedUser)=>{
+            console.log(updatedUser, '=========this updated user')
+            res.recipe('/recipes')
+        })
+
+    }catch(err){
+        res.send(err)
+    }
 })
+
+
 
 
 module.exports = router;

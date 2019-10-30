@@ -32,7 +32,6 @@ app.get('/', (req, res)=>{
     console.log(req.session, 'home route')
     res.render('index.ejs',{
         message: req.session.message,
-        
     })
 
 });
