@@ -14,7 +14,12 @@
     </div>
     <div class='edit-link'>
             <a href="/recipes/<%=bartender.recipes[0]._id%>/edit">Edit Recipe</a>
-        </div>
+    </div>
+    <div>
+        <form action="/recipes/<%=bartender.recipes[0]._id%>?_method=DELETE" method='POST'>
+            <button type='submit'>Delete</button>
+        </form>
+    </div>
 </div>
 
     

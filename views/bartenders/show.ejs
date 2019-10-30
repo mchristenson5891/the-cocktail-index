@@ -13,13 +13,13 @@
                     <ul>
                         <li>username: <%= bartender.username %></li>
                         <li>cocktail index:
-                                <% for(let i=0; i < recipes.recipes.length; i++){ %>
-                                    <ul>
-                                        <li>
-                                            <a href="/recipes/<%= bartender.recipes[i]%>"><%=recipes.recipes[i].drinkName%></a>
-                                            
-                                        </li>
-                                    </ul>
+                            <% for(let i=0; i < recipes.recipes.length; i++){ %>
+                                <ul>
+                                    <li>
+                                        <a href="/recipes/<%= bartender.recipes[i]%>"><%=recipes.recipes[i].drinkName%></a>
+                                        
+                                    </li>
+                                </ul>
                             <% } %>
                         </li> 
                         
@@ -28,7 +28,9 @@
                     <div class='edit-link'>
                         <a href="/bartenders/<%= bartender._id %>/edit">Edit Profile</a>
                     </div>
-                    <a href="/recipes/new">Create Recipe</a>
+                    <div class="create">
+                        <a href="/recipes/new">Create Recipe</a>
+                    </div>
                
             </div>
                     

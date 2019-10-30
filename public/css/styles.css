@@ -206,6 +206,14 @@ h2{
     position: relative;
     height: 25px;
     top: 470px;
+    left: -6px;
+    text-decoration: none;
+}
+.create{
+    
+    position: relative;
+    height: 25px;
+    top: 470px;
     left: 65px;
     text-decoration: none;
 }
@@ -227,4 +235,24 @@ a{
     margin: 0 auto;
     text-align: center;
     padding-bottom: 10%;
+}
+.update-button{
+    position: relative;
+    height: 25px;
+    top: 373px;
+    left: 65px;
+    text-decoration: none;
+}
+.recipe-feed{
+    display: flex;
+    max-width: 85%;
+    margin: 0 auto;
+    background-color: bisque;
+    
+}
+.recipe-feed ul{
+    list-style: none;
+}
+.recipe-feed li{
+    text-align: center;
 }

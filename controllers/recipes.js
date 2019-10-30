@@ -27,7 +27,7 @@ router.get('/', async (req,res)=>{
 });
 
 //new route add is logged in
-router.get('/new', async (req, res)=>{
+router.get('/new', isLoggedIn, async (req, res)=>{
 
     try{
         const allBartenders = await Bartender.find({})
@@ -44,6 +44,7 @@ router.post('/', async (req, res)=>{
     try{
         const createdRecipe = await Recipe.create(req.body)
         const foundBartender = await Bartender.findById(req.session.userId || "5db865585a923c0d6fe4b50a")
+        console.log(foundBartender, 'this is bartender')
             foundBartender.recipes.push(createdRecipe);
             foundBartender.save()
             console.log(foundBartender)
@@ -59,12 +60,13 @@ router.get('/:id', async(req, res)=>{
 
     try{
         const foundBartender = await Bartender.findOne({'recipes': req.params.id})
+        
         .populate({path: 'recipes', match: {_id: req.params.id}})
-        console.log(foundBartender)
         res.render('recipes/show.ejs', {
             bartender: foundBartender,
             recipe: foundBartender.recipes[0]
         })
+        console.log(foundBartender,'<===++++++++++=======found bt');
 
     }catch(err){
         console.log(err)
@@ -98,22 +100,22 @@ router.put('/:id', async(req, res)=>{
     }
 });
 
-//delete
-// router.delete('/:id', async (req, res)=>{
+delete
+router.delete('/:id', async (req, res)=>{
 
-//     try{
-//         const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
-//         const foundBartender = await Bartender.findOne({'photos': req.params.id})
-//         foundBartender.recipes.remove(rq.params.id)
-//         foundBartender.save((err, updatedUser)=>{
-//             console.log(updatedUser, '=========this updated user')
-//             res.recipe('/recipes')
-//         })
+    try{
+        const foundRecipe = await Recipe.findByIdAndRemove(req.params.id)
+        const foundBartender = await Bartender.findOne({'photos': req.params.id})
+        foundBartender.recipe.remove(req.params.id)
+        foundBartender.save((err, updatedUser)=>{
+            console.log(updatedUser, '=========this updated user')
+            res.recipe('/recipes')
+        })
 
-//     }catch(err){
-//         res.send(err)
-//     }
-// })
+    }catch(err){
+        console.log(err)
+    }
+})
 
 
 
