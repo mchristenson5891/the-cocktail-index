@@ -6,9 +6,11 @@ const bcrypt = require('bcryptjs')
 
 //login
 router.post('/login', async(req, res)=>{
+  console.log('hitting login')
 
     try{
       const foundBartender = await Bartender.findOne({username: req.body.username})
+      console.log(foundBartender)
       if(foundBartender){
         if(bcrypt.compareSync(req.body.password, foundBartender.password)){
           req.session.message ='Logged out.'; ///maybe take out
