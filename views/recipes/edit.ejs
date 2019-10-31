@@ -10,6 +10,7 @@
     </div>
     <div class="description">
             <form action="/recipes/<%=recipe._id%>?_method=PUT" method='POST'>
+                <li>By: <%=bartender.username%></li>
                <li>Drink Name: <input type="text" name='drinkName' value='<%=recipe.drinkName%>'></li> 
                 <li>Photo: <input type="text" placeholder="photo" name="photo" value='<%=recipe.photo %>'></li>
                 <li>Ingredients: 

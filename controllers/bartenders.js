@@ -15,10 +15,10 @@ router.post('/login', async(req, res)=>{
           req.session.username = foundBartender.username;
           req.session.userId = foundBartender._id
           req.session.logged = true;
-          res.redirect('/bartenders')
+          res.redirect(`/bartenders/${foundBartender._id}`)
         }else{
           req.session.message = 'Username or password is incorrect'
-          res.redirect(`/bartenders/${founddBartender._id}`);
+          res.redirect('/');
         }
       }else {
         req.session.message = 'Username or password is incorrect'
@@ -56,6 +56,7 @@ router.get('/', async (req, res) => {
         res.send(err)
     }
 })
+
 
 //create user profile
 router.post('/', async (req, res)=>{
