@@ -189,7 +189,12 @@ h2{
 }
 
 .photo{
-    border: 2px solid black;
+    padding: 2%;
+}
+.description{
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
 }
 
 .description ul{

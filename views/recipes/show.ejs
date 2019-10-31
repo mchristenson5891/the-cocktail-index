@@ -9,8 +9,10 @@
         <img src="<%= recipe.photo %>">
     </div>
     <div class="description">
-        <li> Drink Name: <%= recipe.drinkName %></li>
-        <li>Ingredients: <%= recipe.ingredients %></li>
+        <ul>
+            <li>Drink Name: <%= recipe.drinkName %></li>
+            <li>Ingredients: <%= recipe.ingredients %></li>
+        </ul>
     </div>
    
     <% if(isLogged) { %>
