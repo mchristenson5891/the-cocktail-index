@@ -5,13 +5,14 @@
 
 <h1>Cocktail Feed</h1>
 <div class="recipe-feed">
-        <ul>
+    <div class="photofeed">
+        
             <% for(let i = 0; i < recipes.length; i++) { %>
-                <li class='image'> <a href="/recipes/<%= recipes[i]._id%>"><img src="<%= recipes[i].photo %>"></a>
-                </li> 
+                <a href="/recipes/<%= recipes[i]._id%>"><img src="<%= recipes[i].photo %>"></a>
+                
             <% } %>
-        </ul>
-
+        
+    </div>
 </div>
     
 </body>
