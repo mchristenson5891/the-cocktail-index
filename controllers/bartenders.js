@@ -9,8 +9,8 @@ router.post('/login', async(req, res)=>{
 
     try{
       const foundBartender = await Bartender.findOne({username: req.body.username})
-      if(foundBartender ){
-        if(bcrypt.compareSync(req.body.password, foundBartender .password)){
+      if(foundBartender){
+        if(bcrypt.compareSync(req.body.password, foundBartender.password)){
           req.session.message ='Logged out.'; ///maybe take out
           req.session.username = foundBartender.username;
           req.session.userId = foundBartender._id
@@ -18,7 +18,7 @@ router.post('/login', async(req, res)=>{
           res.redirect('/bartenders')
         }else{
           req.session.message = 'Username or password is incorrect'
-          res.redirect('/');
+          res.redirect(`/bartenders/${founddBartender._id}`);
         }
       }else {
         req.session.message = 'Username or password is incorrect'
@@ -48,7 +48,6 @@ router.get('/', async (req, res) => {
 
     try{
         const allBartenders = await Bartender.find({})
-        console.log(allBartenders)
         res.render('bartenders/index.ejs',{
             bartenders: allBartenders
         })
@@ -57,12 +56,6 @@ router.get('/', async (req, res) => {
         res.send(err)
     }
 })
-
-//new route
-// router.get('/new', (req, res )=>{
-//     console.log(req.body, 'this is the route')
-//     res.render('bartenders/new.ejs');
-// })
 
 //create user profile
 router.post('/', async (req, res)=>{

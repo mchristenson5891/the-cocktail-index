@@ -201,9 +201,13 @@ main div{
     height: 400px;
     border: 2px solid black;
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 20%;
+    left: 33%;
 }
+input[type=text] {
+    border: none;
+    border-bottom: 4px solid #8842d5;  
+ }
 
 h2{
     text-align: center;
@@ -286,7 +290,7 @@ a{
     justify-content: space-evenly;
     max-width: 85%;
     margin: 0 auto;
-    background-color: bisque;
+    background-color: #b26000;
 }
 
 img{

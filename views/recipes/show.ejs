@@ -17,10 +17,10 @@
    
     <% if(isLogged) { %>
         <div class='edit-link'>
-                <a href="/recipes/<%=bartender.recipes[0]._id%>/edit">Edit Recipe</a>
+                <a href="/recipes/<%=recipe._id%>/edit">Edit Recipe</a>
         </div>
         <div>
-            <form action="/recipes/<%=bartender.recipes[0]._id%>?_method=DELETE" method='POST'>
+            <form action="/recipes/<%=recipe._id%>?_method=DELETE" method='POST'>
                 <button type='submit'>Delete</button>
             </form>
         </div>
