@@ -14,7 +14,7 @@
 
 [Click To View!]()
 * Users create a profile to join the community.
-* Once a profile is created, users are able to create their favorite or unique cocktials. 
+* Once a profile is created, users are able to add their favorite or unique cocktails to the feed. 
 * Users can browse the cocktail index to and grab recipes for any occasion, without registering. 
 * Users can view bartender profiles and view their personal cocktail index. 
  
