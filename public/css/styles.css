@@ -203,9 +203,13 @@ main div{
     top: 20%;
     left: 33%;
 }
+input{
+    padding-left: 10px;
+}
 input[type=text] {
     border: none;
-    border-bottom: 4px solid #8842d5;  
+    height: 30px; 
+    
  }
 
 h2{
@@ -240,6 +244,7 @@ h2{
 
 .edit-link, .create{
     text-decoration: none;
+    padding: 15px;
 }
 
 a{
@@ -287,7 +292,33 @@ img{
 .description-top h1 {
     font-size: 23px;
 }
+
 .description-bottom {
     display: flex;
     justify-content: space-evenly;
+}
+
+.delete-button{
+    color: black;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-family: 'Special Elite', cursive;
+    width: 100px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.drink-name, .photos{
+    height: 50px;
+    padding-top: 10px;
+}
+.ingredients{
+    padding-top: 10px;
+}
+.create-button{
+    color: black;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-family: 'Special Elite', cursive;
+    width: 175px;
+    padding: 15px;
+    font-size: 20px;
 }

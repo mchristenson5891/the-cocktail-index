@@ -33,13 +33,13 @@
                         <div class="create">
                             <a href="/recipes/new">Create Recipe</a>
                         </div>
+                        <div class="delete">
+                                <form action="/bartenders/<%= bartender._id%>?_method=DELETE" method= "POST">
+                                    <button class='delete-button' type= 'Submit'>DELETE</button>
+                                </form>
+    
+                            </div>
                     <% } %>
-                    <div class="delete">
-                            <form action="/bartenders/<%= bartender._id%>?_method=DELETE" method= "POST">
-                                <button class='delete-button' type= 'Submit'>DELETE</button>
-                            </form>
-
-                        </div>
                 </div>
             </div>
         </div>               
