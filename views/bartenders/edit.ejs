@@ -6,28 +6,27 @@
     <h1>Edit Profile</h1>
         <div class = 'content'> 
                 <div class="photo">
-                    <img src="https://i.imgur.com/9Ow9Kr9.png">
+                    <img src="<%= bartender.photoURL %>" > 
                     
                 </div>
                 <div class= 'description'>
-                    <div>
-                        <ul>
-                            <form action="/bartenders/<%= bartender._id %>?_method=PUT" method="POST">
-                            <li>Username: <input type="text" name= 'username' value='<%= bartender.username %>'></li>
-                            <li>cocktail index:</li>
-                            <button class='update-button' type="submit">Update Profile</button>
-                            <!-- <input type="Submit" value='Update Profile'/> -->
-                        </form>
-                        </ul>
+                    <div class= "description-top">
+                            <h1>Username: <input type="text" name= 'username' value='<%= bartender.username %>'></h1>
                     </div>
+                    <div class="description-mid">
+                        
+                        cocktail index:
+                            <form action="/bartenders/<%= bartender._id %>?_method=PUT" method="POST">
+                            <button class='update-button' type="submit">Update Profile</button>
+                            </form>
+                    </div>
+                    <div class="description-bottom">
+                            
+                    </div>
+
                 </div>
                     
-                <div class="delete-button">
-                    <form action="/bartenders/<%= bartender._id%>?_method=DELETE" method= "POST">
-                    <button type= 'Submit'>DELETE</button>
-                </form>
-                    
-                </div> 
+                
         </div>
                     
 </body>

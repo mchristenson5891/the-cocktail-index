@@ -9,7 +9,6 @@ body{
     width: 100%;
     top: 0;
     background-color: black;
-    
 }
 
 .nav-header{
@@ -223,6 +222,7 @@ h2{
     padding-right: 2%;
 }
 .description{
+    width: 50%;
     text-align: center;
     list-style: none;
     font-size: 20px;
@@ -238,19 +238,7 @@ h2{
     padding-bottom: 15px;
 }
 
-.edit-link{
-    position: relative;
-    height: 25px;
-    top: 470px;
-    left: -6px;
-    text-decoration: none;
-}
-.create{
-    
-    position: relative;
-    height: 25px;
-    top: 470px;
-    left: 65px;
+.edit-link, .create{
     text-decoration: none;
 }
 
@@ -258,14 +246,6 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     color: black;
-}
-
-.delete-button{
-    position: relative;
-    height: 25px;
-    top: 470px;
-    left: 65px;
-    display: block;
 }
 
 .recipe-new{
@@ -302,4 +282,12 @@ img{
 .photofeed{
     justify-content: space-evenly;
     padding: 2%;
+}
+
+.description-top h1 {
+    font-size: 23px;
+}
+.description-bottom {
+    display: flex;
+    justify-content: space-evenly;
 }
