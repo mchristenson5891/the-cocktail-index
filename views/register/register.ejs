@@ -3,16 +3,25 @@
   }) %>
 <%-include('./partials/navbar.ejs')%>
 
-<div class= 'login-form'>
-  <h2>Register</h2>
+<div class = 'content'> 
+
+    <div class='body-image'>
+            <img src="https://images.unsplash.com/photo-1531002329786-97e3efcb754b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class='splash-image'>
+
+    </div>
+<div class= 'login-description'>
+    <h2>Register</h2>
     <form action="/bartenders/register" method="POST">
-      <input type="text" name="photoURL" placeholder="photoURL"><br>
-      <input type="text" name="username" placeholder="username"><br>
-      <input type="email" name="email" placeholder="email"><br>
-      <input type="password" name="password" placeholder="password"><br>
-      <button type="submit">Register</button>
+      <input type="text" name="photoURL" placeholder="photoURL"><br><br>
+      <input type="text" name="username" placeholder="username"><br><br>
+      <input type="email" name="email" placeholder="email"><br><br>
+      <input type="password" name="password" placeholder="password"><br><br>
+      <button type="submit" class='register-button'>Register</button>
     </form>
+        
 </div>
+</div> 
+
     
 </body>
 </html>
