@@ -145,6 +145,7 @@ body{
     max-width: 85%;
     margin: 0 auto;
     background-color: #b26000;
+    margin-bottom: 10%;
 }
 
 h1{
@@ -275,11 +276,9 @@ a{
     max-width: 85%;
     margin: 0 auto;
     background-color: #b26000;
+    padding-left: 6%;
 }
 
-.photofeed{
-    justify-content: space-evenly;
-}
 
 .description-top h1 {
     font-size: 23px;
@@ -315,12 +314,8 @@ a{
     font-size: 20px;
 }
 
-.cocktail-index{
-    flex-direction: row;
-    width: 100%;
-}
 .cocktail-image{
-    width: 297px;;
+    width: 312px;
     height: 330px;
     padding: 10px;
 }
@@ -349,4 +344,8 @@ img{
     width: 130px;
     padding: 15px;
     font-size: 20px;
+}
+.recipe-text{
+    width: 40px;
+    height: 40px;
 }

@@ -19,10 +19,14 @@
                         <p>Photo: <input type="text" placeholder="photo" name="photo" value='<%=recipe.photo %>'></p>
                     
 
-                        <p>Ingredients: <textarea name="ingredients" cols="30" rows="10"><%=recipe.ingredients %></textarea>
-                        <div class='description-bottom'>
+                    <p>Ingredients:
+                        <textarea name="ingredients" cols="30" rows="10">
+                            <%=recipe.ingredients %>
+                        </textarea></p>
 
-                            <button type="submit" class='delete-button'>Update</button></p>
+                        
+                        <div class='description-bottom'>
+                            <button type="submit" class='delete-button'>Update</button>
                         </div>
                 </form>
             </div>   
