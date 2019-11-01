@@ -9,23 +9,31 @@
         <img src="<%= recipe.photo %>">
     </div>
     <div class="description">
-        <ul>
-            <li>By: <%= bartender.username %> </li>
-            <li>Drink Name: <%= recipe.drinkName %></li>
-            <li>Ingredients: <%= recipe.ingredients %></li>
-        </ul>
+        <div class="description-top">
+                <h1>By: <%= bartender.username %></h1>
+        </div>
+        <div class="description-mid">
+            <ul>
+                <li>Drink Name: <%= recipe.drinkName %></li>
+                <li>Ingredients: <%= recipe.ingredients %></li>
+            </ul>
+        </div>
+        <div class="description-bottom">
+                <% if(isLogged) { %>
+                    <div class='edit-link'>
+                            <a href="/recipes/<%=recipe._id%>/edit">Edit Recipe</a>
+                    </div>
+                    <div>
+                        <form action="/recipes/<%=recipe._id%>?_method=DELETE" method='POST'>
+                            <button type='submit' class="delete-button">Delete</button>
+                        </form>
+                    </div>
+                <% } %>
+            
+        </div>
     </div>
    
-    <% if(isLogged) { %>
-        <div class='edit-link'>
-                <a href="/recipes/<%=recipe._id%>/edit">Edit Recipe</a>
-        </div>
-        <div>
-            <form action="/recipes/<%=recipe._id%>?_method=DELETE" method='POST'>
-                <button type='submit'>Delete</button>
-            </form>
-        </div>
-    <% } %>
+   
 </div>
 
     

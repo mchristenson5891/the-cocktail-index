@@ -278,15 +278,8 @@ a{
     background-color: #b26000;
 }
 
-img{
-    /* width: 300px;
-    height: 330px; */
-    padding: 2%;
-}
-
 .photofeed{
     justify-content: space-evenly;
-    padding: 2%;
 }
 
 .description-top h1 {
@@ -324,5 +317,11 @@ img{
 }
 
 .cocktail-index{
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+}
+.cocktail-image{
+    width: 297px;;
+    height: 330px;
+    padding: 10px;
 }

@@ -8,11 +8,9 @@
     <div class="photofeed">
         
             <% for(let i = 0; i < recipes.length; i++) { %>
-                <div class="cocktail-index">
-                    <a href="/recipes/<%= recipes[i]._id%>"><img src="<%= recipes[i].photo %>"></a>
-
-                </div>
                 
+                    <a href="/recipes/<%= recipes[i]._id%>"><img src="<%= recipes[i].photo %>" class='cocktail-image'></a>
+
             <% } %>
         
     </div>
