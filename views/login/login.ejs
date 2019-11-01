@@ -2,16 +2,26 @@
     title: 'index page'
     }) %>
 <%-include('./partials/navbar.ejs')%>
-    <div class='login-form'>
-        <h2>Login</h2>
+
+<div class = 'content'> 
+
+        <div class='body-image'>
+                <img src="https://images.unsplash.com/photo-1542847623-1d5b3394193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80" class='splash-image'>
+    
+        </div>
+    <div class= 'login-description'>
+            <h2>Login</h2>
+        
             <form action="/bartenders/login" method="POST">
-                <input type="text" name="username" placeholder="username"><br>
-                <input type="text" name="email" placeholder="email"><br>
-                <input type="password" name="password" placeholder="password"><br>
+    
+                <input type="text" name="username" placeholder="username"><br><br>
+                <input type="text" name="email" placeholder="email"><br><br>
+                <input type="password" name="password" placeholder="password"><br><br>
                 <button type="submit">Login</button>
             </form> 
-
+            
     </div>
+</div> 
          
 </body>
 </html>

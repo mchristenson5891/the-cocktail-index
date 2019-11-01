@@ -209,8 +209,11 @@ input{
 input[type=text] {
     border: none;
     height: 30px; 
-    
- }
+}
+input[type=password] {
+    border: none;
+    height: 30px; 
+}
 
 h2{
     text-align: center;
@@ -328,4 +331,18 @@ a{
 
 .recipe-update{
     padding-top: 30%;
+}
+img{
+    padding: 2%;
+}
+.splash-image{
+    width: 713px;
+    height: 500px;
+}
+.login-description{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 6%;
+    padding-right: 2%;
+    width: 50%;
 }
