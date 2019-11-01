@@ -322,3 +322,7 @@ img{
     padding: 15px;
     font-size: 20px;
 }
+
+.cocktail-index{
+    flex-direction: column;
+}
