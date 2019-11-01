@@ -14,11 +14,11 @@
                 </div>
                 <div class="description-mid">
                     <ul>
-                        <li>cocktail index:
+                        <li>cocktail index:</br></br>
                             <% for(let i=0; i < recipes.recipes.length; i++){ %>
                                 <ul>
                                     <li>
-                                        <a href="/recipes/<%= bartender.recipes[i]%>"><%=recipes.recipes[i].drinkName%></a>            
+                                        - <a href="/recipes/<%= bartender.recipes[i]%>"><%=recipes.recipes[i].drinkName%></a>            
                                     </li>
                                 </ul>
                             <% } %>

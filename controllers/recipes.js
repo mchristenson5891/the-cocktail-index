@@ -60,11 +60,13 @@ router.get('/:id', async (req, res)=>{
     try{
         const foundBartender = await Bartender.findOne({'recipes': req.params.id}).populate('recipes')
         const foundRecipe = await Recipe.findById(req.params.id)
-        console.log(req.session.logged, "THIS IS IN THE RECIPES ROUTE")
-        res.render('recipes/show.ejs', {
+        console.log(typeof foundBartender._id, "BARTENDER ID YO")
+        console.log(typeof req.session.userId, "REQ SESSION ID YO")
+            res.render('recipes/show.ejs', {
             bartender: foundBartender,
             recipe: foundRecipe,
-            isLogged: req.session.logged
+            isLogged: req.session.logged,
+            currentUser: req.session.userId
         });
 
     }catch(err){
