@@ -6,7 +6,11 @@ const session = require('express-session')
 const bartendersController = require('./controllers/bartenders.js');
 const recipesController = require('./controllers/recipes.js');
 
+require('dotenv').config()
+
 require('./db/db');
+
+const PORT = process.env.PORT
 
 //sessions
 app.use(session({
@@ -45,6 +49,6 @@ app.get('/login', (req, res)=>{
     res.render('login/login.ejs')
 });
 
-app.listen(3000, ()=>{
-    console.log(3000, 'listening')
+app.listen(PORT, ()=>{
+    console.log(`running on port ${PORT}`)
 });
