@@ -40,14 +40,14 @@ router.get('/new', isLoggedIn, async (req, res)=>{
 });
 
 router.post('/', async (req, res)=>{
-    console.log(req.body)
+//     console.log(req.body)
     try{
         const createdRecipe = await Recipe.create(req.body)
-        const foundBartender = await Bartender.findById(req.session.userId || "5db865585a923c0d6fe4b50a")
-        console.log(foundBartender, 'this is bartender')
-            foundBartender.recipes.push(createdRecipe);
-            foundBartender.save()
-            console.log(foundBartender)
+        const foundBartender = await Bartender.findById(req.session.userId)
+//         console.log(foundBartender, 'this is bartender')
+        foundBartender.recipes.push(createdRecipe);
+        await foundBartender.save()
+//         console.log(foundBartender)
         res.redirect('/recipes')
 
     }catch(err){
@@ -60,13 +60,13 @@ router.get('/:id', async (req, res)=>{
     try{
         const foundBartender = await Bartender.findOne({'recipes': req.params.id}).populate('recipes')
         const foundRecipe = await Recipe.findById(req.params.id)
-        console.log(typeof foundBartender._id, "BARTENDER ID YO")
-        console.log(typeof req.session.userId, "REQ SESSION ID YO")
+//         console.log(typeof foundBartender._id, "BARTENDER ID YO")
+//         console.log(typeof req.session.userId, "REQ SESSION ID YO")
             res.render('recipes/show.ejs', {
-            bartender: foundBartender,
-            recipe: foundRecipe,
-            isLogged: req.session.logged,
-            currentUser: req.session.userId
+                bartender: foundBartender,
+                recipe: foundRecipe,
+                isLogged: req.session.logged,
+                currentUser: req.session.userId
         });
 
     }catch(err){
