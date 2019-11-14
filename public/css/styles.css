@@ -148,7 +148,7 @@ body{
     margin-bottom: 10%;
 }
 
-h1{
+h1, h4{
     text-align: center;
     padding-left: 10px;
     padding-top: 2%;
@@ -199,11 +199,11 @@ main div{
 input{
     padding-left: 10px;
 }
-input[type=text] {
+input[type=text], input[type=password], input[type=email] {
     border: none;
     height: 30px; 
 }
-input[type=password] {
+/* input[type=password] {
     border: none;
     height: 30px; 
 }
@@ -211,7 +211,7 @@ input[type=password] {
 input[type=email] {
     border: none;
     height: 30px; 
-}
+} */
 
 h2{
     text-align: center;
@@ -290,13 +290,16 @@ a{
     justify-content: space-evenly;
 }
 
-.delete-button{
+.delete-button, .create-button{
     color: black;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     font-family: 'Special Elite', cursive;
-    width: 100px;
     padding: 15px;
     font-size: 20px;
+}
+
+.delete-button{
+    width: 100px;
 }
 
 .drink-name, .photos{
@@ -307,12 +310,7 @@ a{
     padding-top: 10px;
 }
 .create-button{
-    color: black;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-family: 'Special Elite', cursive;
     width: 175px;
-    padding: 15px;
-    font-size: 20px;
 }
 
 .cocktail-image{
