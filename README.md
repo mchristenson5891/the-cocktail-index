@@ -12,7 +12,7 @@
 ![Image of game play screen](https://i.imgur.com/FGEzigx.png)
 
 
-[Click To View!]()
+[Click To View!](https://name-of-thecocktailindex.herokuapp.com/)
 * Users create a profile to join the community.
 * Once a profile is created, users are able to add their favorite or unique cocktails to the feed. 
 * Users can browse the cocktail index to and grab recipes for any occasion, without registering. 
